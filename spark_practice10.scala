@@ -2,13 +2,13 @@ export SPARK_MAJOR_VERSION=2
 spark-shell
 
 
-import org.apache.spark.sql.SparkSession 
-val spark = SparkSession.builder()
-                        .appName("Spark example")
-                        .config("spark.some.config.option", "some-value")
-                        .getOrCreate()
+// import org.apache.spark.sql.SparkSession 
+// val spark = SparkSession.builder()
+//                         .appName("Spark example")
+//                         .config("spark.some.config.option", "some-value")
+//                         .getOrCreate()
 
-val sc = spark.sparkContext
+// val sc = spark.sparkContext
 
 
 //간단한 broadcast variable 생성

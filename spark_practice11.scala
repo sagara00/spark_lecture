@@ -88,6 +88,12 @@ df.sort($"sepal_width".desc).show
 // petal_width가 0.5 이상인 것
 df.where("petal_width > 0.5").show
 
+//통계정보 보기 (숫자타입)
+df.select("sepal_width").describe().collect().mkString(",")
+
+//통계정보 보기 (문자 타입)
+df.groupBy("species").count.sort(desc("count")).collect().mkString(",")
+
 //sql문 작성
 // setosa종의 sepal 길이, petal 길이 출력
 df.registerTempTable("iris") //테이블 생성

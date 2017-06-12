@@ -11,12 +11,12 @@ val links = lines.map{ s =>
 }.distinct().groupByKey().cache()
 
 //compactBuffer (scala의 arrayBuffer, java의 AyList)
-links.foreach(println)
+links.collect.foreach(println)
 
 //links.mapValues(f) 는 pair RDD구조에서, links.map {case (k, v) => (k, f(v))}의 축약
 var ranks = links.mapValues(v => 1.0)
 
-ranks.foreach(println)
+ranks.collect.foreach(println)
 
 //반복 알고리즘 동작
 for (i <- 1 to iters) {
@@ -34,4 +34,3 @@ for (i <- 1 to iters) {
   println("\n")
 
 }
-
