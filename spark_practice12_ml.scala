@@ -20,7 +20,7 @@ val sqlContext = new org.apache.spark.sql.SQLContext(sc)
 
 // csv파일에 header유무 확인, delimiter 확인
 // Input file loading..
-val df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").load("/Users/sagara/iris.txt")
+val df = sqlContext.read.format("com.databricks.spark.csv").option("header", "true").option("inferSchema", "true").load("/Users/spark/iris.txt")
 
 // schema 정보 및 data확인
 df.printSchema

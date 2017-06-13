@@ -45,3 +45,9 @@ println(accum.value)
 val accum = sc.longAccumulator("My Accumulator")
 sc.parallelize(Array(1, 2, 3, 4)).foreach(x => accum.add(x))
 
+
+//kryo serializer
+// import org.apache.spark.SparkConf
+// import org.apache.spark.SparkContext
+// val conf = new SparkConf().set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+// val sc = new SparkContext(conf)
