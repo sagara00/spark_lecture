@@ -9,7 +9,7 @@ wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
 # 10장
 ## broadcast, accumulator 예제
 
-아래 예제를 broadcast 적용 해보기
+### 실습문제1. 아래 예제를 broadcast 적용 해보기
 
 ```scala
 
