@@ -16,8 +16,8 @@ export SPARK_MAJOR_VERSION=2
 
 > 실습 파일 다운로드
 ```shell
-wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/iris.txt
-wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
+wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/dataset/iris.txt
+wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/dataset/pages.txt
 ```
 # 10장
 ## broadcast, accumulator 예제
@@ -53,7 +53,7 @@ import org.apache.spark.Accumulator
 
 > iris data 조작하기
 
-[실습코드](https://github.com/sagara00/spark_lecture/blob/master/spark_practice11.scala)
+[실습코드](https://github.com/sagara00/spark_lecture/blob/master/src/spark_practice11.scala)
 
 # 12장
 ## 1. 반복알고리즘 실습
@@ -117,10 +117,10 @@ for (i <- 1 to iters) {
 - Petal Width    꽃잎의 너비 정보이다.  
 - Species    꽃의 종류 정보이다.  setosa / versicolor / virginica 의 3종류로 구분된다.
 
-[실습코드](https://github.com/sagara00/spark_lecture/blob/master/spark_practice12_classification.scala)
+[실습코드](https://github.com/sagara00/spark_lecture/blob/master/src/spark_practice12_classification.scala)
 
 ## 3. clustering 실습
 iris dataset 이용
 입력 feature 정규화를 위해 transformer를 거쳐서 k-means 로 clustering
 
-[실습코드](https://github.com/sagara00/spark_lecture/blob/master/spark_practice12_clustering.scala)
+[실습코드](https://github.com/sagara00/spark_lecture/blob/master/src/spark_practice12_clustering.scala)
