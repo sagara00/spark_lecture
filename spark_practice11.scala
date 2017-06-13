@@ -1,17 +1,6 @@
 
 import org.apache.spark.sql.SQLContext
-import org.apache.spark.ml.feature.Normalizer
 import scala.collection.mutable.ArrayBuffer
-import org.apache.spark.ml.classification.{RandomForestClassificationModel, RandomForestClassifier, LogisticRegression, DecisionTreeClassifier, BinaryLogisticRegressionSummary}
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer, VectorAssembler}
-import org.apache.spark.ml.classification.{GBTClassificationModel, GBTClassifier}
-import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
-import org.apache.spark.ml.tuning.{ParamGridBuilder, CrossValidator, TrainValidationSplit}
-import org.apache.spark.ml.{Pipeline, PipelineModel}
-import org.apache.spark.ml.classification.LogisticRegressionModeln
-import org.apache.spark.ml.classification.DecisionTreeClassificationModel
-import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer, VectorAssembler}
 import org.apache.spark.sql.SparkSession
 
 //val spark = SparkSession.builder().appName("Spark ML example").config("spark.some.config.option", "some-value").getOrCreate()
