@@ -3,15 +3,15 @@
 localhost:2222
 
 > Spark 계정으로 접속
-
+```shell
 su - spark
-
+```
 > spark 2.0 버전으로 실행
-
+```shell
 export SPARK_MAJOR_VERSION=2
+./spark-shell
 
-spark-shell
-
+```
 
 > 실습 파일 다운로드
 
@@ -44,6 +44,9 @@ val words = sc.textFile("/Users/Sagara/spark/README.md").flatMap(line => line.sp
 
 # 11장
 ## DataFrame 실습
+
+iris data 조작하기
+
 https://github.com/sagara00/spark_lecture/blob/master/spark_practice11.scala
 
 # 12장
@@ -92,9 +95,11 @@ for (i <- 1 to iters) {
 
 ## 2. classification 실습
 
-데이터명 : IRIS (아이리스, 붗꽃 데이터)  
+데이터명 : IRIS (아이리스, 붗꽃 데이터)
 레코드수 : 150개 
 필드개수 : 5개 
+
+https://www.google.co.kr/search?q=iris&newwindow=1&rlz=1C5CHFA_enKR710KR710&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj7_vTukLrUAhXFk5QKHabxACkQ_AUIBigB&biw=1680&bih=926#newwindow=1&tbm=isch&q=iris+flower
 
 데이터설명 : 아이리스(붓꽃) 데이터에 대한 데이터이다. 꽃잎의 각 부분의 너비와 길이등을 측정한 데이터이며 150개의 레코드로 구성되어 있다. 아이리스 꽃은 아래의 그림과 같다. 프랑스의 국화라고 한다. 
 
