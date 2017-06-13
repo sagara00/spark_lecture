@@ -1,5 +1,4 @@
-export SPARK_MAJOR_VERSION=2
-spark-shell
+
 
 // import org.apache.spark.sql.SparkSession 
 // val spark = SparkSession.builder()

@@ -17,7 +17,6 @@ export SPARK_MAJOR_VERSION=2
 > 실습 파일 다운로드
 ```shell
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/iris.txt
-
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
 ```
 # 10장
