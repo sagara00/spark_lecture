@@ -3,6 +3,7 @@
 localhost:2222
 
 > 실습 파일 다운로드
+
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/iris.txt
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
 
