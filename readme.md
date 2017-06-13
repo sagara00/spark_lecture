@@ -8,8 +8,7 @@ wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
 
 # 10장
 ## broadcast, accumulator 예제
-
-### 실습문제1. 아래 예제를 broadcast 적용 해보기
+### (실습문제1) 아래 코드에 broadcast 적용 해보기
 
 ```scala
 
@@ -22,4 +21,10 @@ val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pws).collect
 
 //pws가 대량의 데이터일 경우 속도저하 유발함. 분산처리하는 모든 executor에 pws 네트워크전송 유발
 
+```
+
+## (실습문제2) 모든 단어의 평균 길이 구하기
+
+```scala
+val words = sc.textFile("/Users/Sagara/spark/README.md").flatMap(line => line.split(' '))
 ```
