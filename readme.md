@@ -1,3 +1,4 @@
+# 준비
 > Putty로 SSH 접속
 
 localhost:2222
@@ -14,11 +15,11 @@ export SPARK_MAJOR_VERSION=2
 ```
 
 > 실습 파일 다운로드
-
+```shell
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/iris.txt
 
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
-
+```
 # 10장
 ## broadcast, accumulator 예제
 > 아래 코드에 broadcast 적용 해보기
@@ -104,9 +105,6 @@ for (i <- 1 to iters) {
 데이터명 : IRIS (아이리스, 붗꽃 데이터)
 레코드수 : 150개 
 필드개수 : 5개 
-
-[꽃 모양](https://www.google.co.kr/search?q=iris&newwindow=1&rlz=1C5CHFA_enKR710KR710&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj7_vTukLrUAhXFk5QKHabxACkQ_AUIBigB&biw=1680&bih=926#newwindow=1&tbm=isch&q=iris+flower)
-
 
 ![iris](http://trustmeiamadeveloper.com/content/images/2016/08/iris_types.png)
 
