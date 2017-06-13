@@ -21,7 +21,7 @@ wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
 
 # 10장
 ## broadcast, accumulator 예제
-### (실습문제1) 아래 코드에 broadcast 적용 해보기
+> 아래 코드에 broadcast 적용 해보기
 
 ```scala
 
@@ -36,22 +36,25 @@ val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pws).collect
 
 ```
 
-## (실습문제2) 모든 단어의 평균 길이 구하기
+> 모든 단어의 평균 길이 구하기
 
 ```scala
 val words = sc.textFile("/Users/Sagara/spark/README.md").flatMap(line => line.split(' '))
+//Double = 5.73015873015873
 ```
+> accumulator 로 구하기
+
 
 # 11장
 ## DataFrame 실습
 
-iris data 조작하기
+> iris data 조작하기
 
 https://github.com/sagara00/spark_lecture/blob/master/spark_practice11.scala
 
 # 12장
 ## 1. 반복알고리즘 실습
-아래 page rank 코드에서 TODO 부분 구현해보기
+> 아래 page rank 코드에서 TODO 부분 구현해보기
 
 ```scala
 val iters = 10
