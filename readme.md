@@ -2,9 +2,21 @@
 
 localhost:2222
 
+> Spark 계정으로 접속
+
+su - spark
+
+> spark 2.0 버전으로 실행
+
+export SPARK_MAJOR_VERSION=2
+
+spark-shell
+
+
 > 실습 파일 다운로드
 
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/iris.txt
+
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/pages.txt
 
 # 10장
@@ -78,4 +90,27 @@ for (i <- 1 to iters) {
 }
 ```
 
-## 2. 
+## 2. classification 실습
+
+데이터명 : IRIS (아이리스, 붗꽃 데이터)  
+레코드수 : 150개 
+필드개수 : 5개 
+
+데이터설명 : 아이리스(붓꽃) 데이터에 대한 데이터이다. 꽃잎의 각 부분의 너비와 길이등을 측정한 데이터이며 150개의 레코드로 구성되어 있다. 아이리스 꽃은 아래의 그림과 같다. 프랑스의 국화라고 한다. 
+
+필드의 이해 : 
+1번째부터 4번째의 4개의 필드는 입력 변수로 사용되고, 맨 아래의 Species 속성이 목표(종속) 변수로 사용된다.
+
+ Sepal Length   꽃받침의 길이 정보이다.
+ Sepal Width    꽃받침의 너비 정보이다.
+ Petal Length   꽃잎의 길이 정보이다.
+ Petal Width    꽃잎의 너비 정보이다.  
+ Species    꽃의 종류 정보이다.  setosa / versicolor / virginica 의 3종류로 구분된다.
+
+https://github.com/sagara00/spark_lecture/blob/master/spark_practice12_classification.scala
+
+## 3. clustering 실습
+iris dataset 이용
+입력 feature 정규화를 위해 transformer를 거쳐서 k-means 로 clustering
+
+https://github.com/sagara00/spark_lecture/blob/master/spark_practice12_clustering.scala
