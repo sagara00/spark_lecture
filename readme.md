@@ -53,7 +53,7 @@ import org.apache.spark.Accumulator
 
 > iris data 조작하기
 
-https://github.com/sagara00/spark_lecture/blob/master/spark_practice11.scala
+[실습코드](https://github.com/sagara00/spark_lecture/blob/master/spark_practice11.scala)
 
 # 12장
 ## 1. 반복알고리즘 실습
@@ -108,7 +108,7 @@ for (i <- 1 to iters) {
 [꽃 모양](https://www.google.co.kr/search?q=iris&newwindow=1&rlz=1C5CHFA_enKR710KR710&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj7_vTukLrUAhXFk5QKHabxACkQ_AUIBigB&biw=1680&bih=926#newwindow=1&tbm=isch&q=iris+flower)
 
 
-![iris] (http://trustmeiamadeveloper.com/content/images/2016/08/iris_types.png)
+![iris](http://trustmeiamadeveloper.com/content/images/2016/08/iris_types.png)
 
 
 데이터설명 : 아이리스(붓꽃) 데이터에 대한 데이터이다. 꽃잎의 각 부분의 너비와 길이등을 측정한 데이터이며 150개의 레코드로 구성되어 있다. 아이리스 꽃은 아래의 그림과 같다. 프랑스의 국화라고 한다. 
