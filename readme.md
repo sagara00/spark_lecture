@@ -35,7 +35,7 @@ https://github.com/sagara00/spark_lecture/blob/master/spark_practice11.scala
 
 # 12장
 ## 1. 반복알고리즘 실습
-### page rank
+### 아래 page rank 코드에서 TODO 부분 구현해보기
 
 ```scala
 val iters = 10
@@ -62,8 +62,8 @@ ranks.collect.foreach(println)
 for (i <- 1 to iters) {
 //rank를 이웃으로 분배
   val contribs = links.join(ranks).values.flatMap{ case (urls, rank) =>
-    val size = urls.size
     //TODO: 구현1 기여도 계산
+    val size = urls.size
     urls.map()
   }
   //TODO: 구현2. 새로운 rank 계산
@@ -76,3 +76,4 @@ for (i <- 1 to iters) {
 
 }
 ```
+
