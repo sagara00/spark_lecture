@@ -1,5 +1,5 @@
 //모든 단어의 평균 길이
-val words = sc.textFile("/Users/Sagara/spark/README.md").flatMap(line => line.split(' '))
+val words = sc.textFile("README.md").flatMap(line => line.split(' '))
 
 //words.map(word => (word, word.length)).reduceByKey((key,value) => key + value).map(x => x._2).reduce((x,y)=>x+y).toDouble / words.count
 words.map(word => word.length).reduce((x,y)=>x+y).toDouble / words.count

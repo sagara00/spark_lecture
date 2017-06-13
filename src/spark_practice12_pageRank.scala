@@ -1,5 +1,5 @@
 val iters = 10
-val lines = spark.read.textFile("/Users/sagara/pages.txt").rdd
+val lines = spark.read.textFile("pages.txt").rdd
 
 // \\s는 white space (regular expression)
 // 파일이 source -> destination 구조. parts를 pair로 묶어 link에 입력

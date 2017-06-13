@@ -11,7 +11,7 @@ import org.apache.spark.sql.DataFrame
 
 
 //programmatically defining schema 로 불러옴 (StructType() 직접작성)
-var df = new SQLContext(sc).read.format("com.databricks.spark.csv").schema(StructType(Array(StructField("sepal_length",DoubleType,true),StructField("sepal_width",DoubleType,true),StructField("petal_length",DoubleType,true),StructField("petal_width",DoubleType,true),StructField("species",StringType,true)))).option("header", "true").option("delimiter", ",").load("/Users/spark/iris.txt")
+var df = new SQLContext(sc).read.format("com.databricks.spark.csv").schema(StructType(Array(StructField("sepal_length",DoubleType,true),StructField("sepal_width",DoubleType,true),StructField("petal_length",DoubleType,true),StructField("petal_width",DoubleType,true),StructField("species",StringType,true)))).option("header", "true").option("delimiter", ",").load("iris.txt")
 
 // species는 명목형이기 때문에, 수치로 바꿔줌
 val StringIndexer_species = new StringIndexer().setInputCol("species").setOutputCol("si_species").setHandleInvalid("skip")
@@ -89,13 +89,13 @@ TEST_DF.limit(1).show(false)
 pline.save("/Users/spark/k_means_iris_pipeline")
 
 //덮어쓰기
-pline.write.overwrite.save(("/Users/spark/k_means_iris_pipeline"))
+pline.write.overwrite.save(("k_means_iris_pipeline"))
 
 //불러오기
-val pline = Pipeline.load("/Users/spark/k_means_iris_pipeline")
+val pline = Pipeline.load("k_means_iris_pipeline")
 
 //학습 된 모델 저장
-MDL.save("/Users/spark/k_means_iris_model")
+MDL.save("k_means_iris_model")
 
 //불러오기
-val MDL = PipelineModel.load("/Users/spark/k_means_iris_model")
+val MDL = PipelineModel.load("k_means_iris_model")

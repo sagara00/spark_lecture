@@ -14,10 +14,13 @@ export SPARK_MAJOR_VERSION=2
 
 ```
 
-> 실습 파일 다운로드
+> 실습 파일 다운로드 및 HDFS에 put
 ```shell
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/dataset/iris.txt
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/dataset/pages.txt
+hadoop fs -put iris.txt
+hadoop fs -put pages.txt
+hadoop fs -put /usr/hdp/2.6.0.3-8/spark2/README.md
 ```
 # 10장
 ## broadcast, accumulator 예제
