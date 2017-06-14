@@ -42,7 +42,7 @@ val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pws).collect
 > 모든 단어의 평균 길이 구하기
 
 ```scala
-val words = sc.textFile("/Users/Sagara/spark/README.md").flatMap(line => line.split(' '))
+val words = sc.textFile("README.md").flatMap(line => line.split(' '))
 //Double = 5.73015873015873
 ```
 > accumulator 로 구하기
@@ -64,7 +64,7 @@ import org.apache.spark.Accumulator
 
 ```scala
 val iters = 10
-val lines = spark.read.textFile("/Users/sagara/pages.txt").rdd
+val lines = spark.read.textFile("pages.txt").rdd
 
 // \\s는 white space (regular expression)
 // 파일이 source -> destination 구조. parts를 pair로 묶어 link에 입력
