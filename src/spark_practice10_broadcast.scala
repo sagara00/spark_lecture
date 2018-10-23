@@ -34,14 +34,7 @@ val websites = sc.parallelize(Seq("Apache Spark", "Scala")).map(pwsB.value).coll
 
 
 
-//accumulator
 
-val accum = sc.accumulator(0, "Accumulator Example")
-sc.parallelize(Array(1, 2, 3)).foreach(x => accum += x)
-println(accum.value)
-
-val accum = sc.longAccumulator("My Accumulator")
-sc.parallelize(Array(1, 2, 3, 4)).foreach(x => accum.add(x))
 
 
 //kryo serializer
@@ -49,3 +42,7 @@ sc.parallelize(Array(1, 2, 3, 4)).foreach(x => accum.add(x))
 // import org.apache.spark.SparkContext
 // val conf = new SparkConf().set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
 // val sc = new SparkContext(conf)
+
+val conf = new SparkConf().setMaster(...).setAppName(...)
+conf.registerKryoClasses(Array(classOf[MyClass1], classOf[MyClass2]))
+val sc = new SparkContext(conf)

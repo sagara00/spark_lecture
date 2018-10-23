@@ -1,17 +1,12 @@
 # 준비
 > Putty로 SSH 접속
 
-localhost:2222
+localhost (skcc / skcc1234)
 
-> Spark 계정으로 접속
-```shell
-su - spark
-```
-> spark 2.0 버전으로 실행
-```shell
-export SPARK_MAJOR_VERSION=2
-./spark-shell
 
+> spark 실행
+```shell
+spark-shell
 ```
 
 > 실습 파일 다운로드 및 HDFS에 put
@@ -20,7 +15,8 @@ wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/dataset/iri
 wget https://raw.githubusercontent.com/sagara00/spark_lecture/master/dataset/pages.txt
 hadoop fs -put iris.txt
 hadoop fs -put pages.txt
-hadoop fs -put /usr/hdp/2.6.0.3-8/spark2/README.md
+#hadoop fs -put /usr/hdp/2.6.0.3-8/spark2/README.md
+hadoop fs -put /usr/local/skcc/spark-2.3.2-bin-hadoop2.7/README.md
 ```
 # 10장
 ## broadcast, accumulator 예제
