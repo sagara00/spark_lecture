@@ -1,8 +1,12 @@
 # 준비
 > Putty로 SSH 접속
 
-localhost (skcc / skcc1234)
+localhost (root / root1234)
 
+> skcc user 그룹 변경
+```shell
+usermod -G hadoop skcc
+```
 
 > spark 실행
 ```shell

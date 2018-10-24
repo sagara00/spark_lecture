@@ -86,7 +86,7 @@ TEST_DF.limit(1).show(false)
 //모델 및 파이프라인 관리
 
 //파이프라인 저장
-pline.save("/Users/spark/k_means_iris_pipeline")
+pline.save("k_means_iris_pipeline")
 
 //덮어쓰기
 pline.write.overwrite.save(("k_means_iris_pipeline"))
