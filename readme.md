@@ -3,9 +3,11 @@
 
 localhost (root / root1234)
 
-> skcc user 그룹 변경
+> skcc user 파일권한 해제
 ```shell
-usermod -G hadoop skcc
+su - hadoop
+hadoop fs -chmod -R 777 /
+#usermod -G hadoop skcc
 su - skcc #skcc로 사용자 전환
 ```
 
