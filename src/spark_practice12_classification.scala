@@ -52,18 +52,18 @@ val featureIndexer = new VectorIndexer().setInputCol("features").setOutputCol("i
     maxBins : Maximum number of bins used for discretizing continuous features and for choosing how to split on features at each node.
     maxDepth : Maximum depth of the tree (>= 0).
     seed : Param for random seed.
-    automodel : choose whether to use autoML
-    terminateAccu : terminate automl when accuracy gain more than this value.
 
 
    default value
 
     maxCategory=20
+    seed = 1234L
+    
     impurity="gini"
         impurity={gini,entropy}
     maxBins=32
     maxDepth=5
-    seed = 1234L
+    
 */
 val algorithm = new DecisionTreeClassifier().setLabelCol("indexedLabel").setFeaturesCol("indexedFeatures") //.setImpurity("entropy").setMaxBins(32)
 //val algorithm = new RandomForestClassifier().setLabelCol("indexedLabel").setFeaturesCol("indexedFeatures").setNumTrees(10)

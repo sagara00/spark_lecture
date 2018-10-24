@@ -14,13 +14,13 @@ import org.apache.spark.sql.DataFrame
 var df = new SQLContext(sc).read.format("com.databricks.spark.csv").schema(StructType(Array(StructField("sepal_length",DoubleType,true),StructField("sepal_width",DoubleType,true),StructField("petal_length",DoubleType,true),StructField("petal_width",DoubleType,true),StructField("species",StringType,true)))).option("header", "true").option("delimiter", ",").load("iris.txt")
 
 // species는 명목형이기 때문에, 수치로 바꿔줌
-val StringIndexer_species = new StringIndexer().setInputCol("species").setOutputCol("si_species").setHandleInvalid("skip")
+val stringIndexer_species = new StringIndexer().setInputCol("species").setOutputCol("si_species").setHandleInvalid("skip")
 
 // vector assembler로 vector화
-val VectorAssember_ = new VectorAssembler().setInputCols(Array("sepal_length","sepal_width","petal_length","petal_width","si_species")).setOutputCol("va_")
+val vectorAssember = new VectorAssembler().setInputCols(Array("sepal_length","sepal_width","petal_length","petal_width","si_species")).setOutputCol("va")
 
 // P-norm 정규화 (1-> 유클리드, 2->멘해튼)
-val Normalizer_ = new Normalizer().setInputCol("va_").setOutputCol("normedFeature").setP(2)
+val normalizer = new Normalizer().setInputCol("va").setOutputCol("normedFeature").setP(2)
 
 
 /* param descriptions
@@ -44,10 +44,10 @@ val Normalizer_ = new Normalizer().setInputCol("va_").setOutputCol("normedFeatur
  */
 
 //k-means clustering 수행
-val KMeans_ = new KMeans().setFeaturesCol("normedFeature").setPredictionCol("kmeansOutput").setInitMode("k-means||").setInitSteps(5).setK(3).setMaxIter(20).setSeed(1234).setTol(0.0001)
+val kmeans = new KMeans().setFeaturesCol("normedFeature").setPredictionCol("kmeansOutput").setInitMode("k-means||").setInitSteps(5).setK(3).setMaxIter(20).setSeed(1234).setTol(0.0001)
 
 //pipeline 디자인 (명목형 수치화 -> 벡터화 -> 정규화 -> 클러스터링)
-val pline = new Pipeline().setStages(Array(StringIndexer_species,VectorAssember_,Normalizer_,KMeans_))
+val pline = new Pipeline().setStages(Array(stringIndexer_species,vectorAssember,normalizer,kmeans))
 
 //디자인한 파이프라인 실행 (트레이닝, 모델생성)
 val MDL = pline.fit(df)
@@ -73,7 +73,7 @@ val clusterSizes = model.summary.clusterSizes.mkString(",")
 TEST_DF.show(TEST_DF.count.toInt)
 
 //어떻게 벡터화, 정규화 되었나?
-TEST_DF.limit(1).select("va_", "normedFeature").show(false)
+TEST_DF.limit(1).select("va", "normedFeature").show(false)
 
 //잘 클러스터링 되었나?
 TEST_DF.select("species", "kmeansOutput").show(150)
