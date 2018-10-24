@@ -6,6 +6,7 @@ localhost (root / root1234)
 > skcc user 그룹 변경
 ```shell
 usermod -G hadoop skcc
+su - skcc #skcc로 사용자 전환
 ```
 
 > spark 실행
